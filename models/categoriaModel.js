@@ -58,13 +58,15 @@ function editar(id, novaCategoria) {
     salvarDados(categorias);
 }
 
-
-/* =====================================================
-   EXPORTAÇÃO
-===================================================== */
+function excluir(id) {
+    const categorias = lerDados();
+    const novaLista = categorias.filter(c => c.id != id);
+    salvarDados(novaLista);
+}
 module.exports = {
     listar,
     salvar,
     buscarPorId,
-    editar
+    editar,
+    excluir
 };

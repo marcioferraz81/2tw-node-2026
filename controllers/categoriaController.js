@@ -39,4 +39,7 @@ exports.editar = (req, res) => {
     res.redirect('/categorias');
 }
 
-
+exports.excluir = (req, res) => {
+    model.excluir(req.params.id);
+    res.redirect('/categorias');
+}
